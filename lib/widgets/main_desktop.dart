@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:reds_web_portfolio/widgets/custom_button.dart';
 
 import '../constants/assets_path.dart';
 import '../constants/colors.dart';
@@ -31,63 +33,30 @@ class MainDesktop extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          // Positioned(
+          //   left: 0,
+          //   bottom: 0,
+          //   child: Column(
+          //     children: [
+          //       Container(
+          //         height: 200,
+          //         width: 4,
+          //         color: WebsiteColors.redsRed30,
+          //       )
+          //     ],
+          //   ),
+          // ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              RichText(
-                text: TextSpan(
-                  children: [
-                    const TextSpan(
-                      text: "I'm ",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 35,
-                      ),
-                    ),
-                    WidgetSpan(
-                      alignment: PlaceholderAlignment.baseline,
-                      baseline: TextBaseline.alphabetic,
-                      child: GradientText(
-                        'Redwan Ahmed',
-                        gradient: LinearGradient(
-                          colors: [
-                            WebsiteColors.redsRed30,
-                            Colors.white,
-                          ], // Purple to white gradient
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                        ),
-                        style: const TextStyle(
-                          fontSize: 45,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 8),
+              buildRichTextName(),
+              const SizedBox(height: 5),
               const Text(
-                'App Developer',
+                'Flutter App Developer',
                 style: TextStyle(fontSize: 30),
               ),
               const SizedBox(height: 16),
-              SizedBox(
-                width: 250,
-                height: 48,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: WebsiteColors.redsRed30,
-                    //Colors.green.shade900,
-                    foregroundColor: Colors.white,
-                  ),
-                  child: const Text(
-                    'Contact Me',
-                    style: TextStyle(fontSize: 25),
-                  ),
-                ),
-              ),
+              CustomButton(buttonName: 'Contact Me', onPressed: () {  },),
             ],
           ),
           const CircleAvatar(
@@ -98,7 +67,44 @@ class MainDesktop extends StatelessWidget {
       ),
     );
   }
+
+  Widget buildRichTextName() {
+    return RichText(
+              text: TextSpan(
+                children: [
+                  const TextSpan(
+                    text: "I'm ",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 35,
+                    ),
+                  ),
+                  WidgetSpan(
+                    alignment: PlaceholderAlignment.baseline,
+                    baseline: TextBaseline.alphabetic,
+                    child: GradientText(
+                      'Redwan Ahmed',
+                      gradient: LinearGradient(
+                        colors: [
+                          WebsiteColors.redsRed30,
+                          Colors.white,
+                        ], // Purple to white gradient
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      style: GoogleFonts.sora(
+                        fontSize: 56,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            );
+  }
 }
+
+
 
 class GradientText extends StatelessWidget {
   final String text;

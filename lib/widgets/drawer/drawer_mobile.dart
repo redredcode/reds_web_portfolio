@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../constants/nav_items.dart';
+import '../../constants/nav_items.dart';
 
 class DrawerMobile extends StatelessWidget {
   const DrawerMobile({

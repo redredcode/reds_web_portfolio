@@ -41,7 +41,7 @@ class HeaderDesktop extends StatelessWidget {
                     colors: [
                       Colors.black.withOpacity(0.4),
                       Colors.black.withOpacity(0.1),
-                    ])),
+                    ],),),
           ),
 
           // child

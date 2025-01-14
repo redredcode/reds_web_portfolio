@@ -10,7 +10,7 @@ class SiteLogo extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Text(
-        'Redwan Ahmed Fahim',
+        'redredcode',
         //'Redwan\nAhmed\nFahim',
         style: TextStyle(
             fontSize: 22,

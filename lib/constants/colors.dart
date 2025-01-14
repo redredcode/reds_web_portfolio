@@ -3,6 +3,15 @@ import 'package:flutter/material.dart';
 class WebsiteColors {
   static const Color darkBlack60 = Colors.black;
   static Color redsRed30 = Colors.redAccent.shade700;
+  // red gradient- Crimson and Dark Red:
+  static Color crimson = const Color(0xFFDC143C); // Crimson
+  static Color darkRed = const Color(0xFF8B0000); // Dark Red
+  // red gradient- Tomato and firebrick:
+  static Color tomato = const Color(0xFFFF6347); // Tomato
+  static Color firebrick = const Color(0xFFB22222); // Firebrick
+
+
+
   // the rest 10% options
     // gold/yellowish tones
   static const Color brightGold10 = Color(0x00ffd700);

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constants/assets_path.dart';
 import '../constants/colors.dart';
+import 'main_desktop.dart';
 
 class MainMobile extends StatelessWidget {
   const MainMobile({
@@ -45,11 +46,23 @@ class MainMobile extends StatelessWidget {
                     fontSize: 35,
                   ),
                 ),
-                TextSpan(
-                  text: 'Redwan Ahmed',
-                  style: TextStyle(
-                    color: WebsiteColors.redsRed30,
-                    fontSize: 45,
+                WidgetSpan(
+                  alignment: PlaceholderAlignment.baseline,
+                  baseline: TextBaseline.alphabetic,
+                  child: GradientText(
+                    'Redwan Ahmed',
+                    gradient: LinearGradient(
+                      colors: [
+                        WebsiteColors.redsRed30,
+                        Colors.white,
+                      ], // Purple to white gradient
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    style: const TextStyle(
+                      fontSize: 45,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ],
@@ -58,7 +71,7 @@ class MainMobile extends StatelessWidget {
           const SizedBox(height: 8),
           const Text(
             'App Developer',
-            style: TextStyle(fontSize: 30),
+            style: TextStyle(fontSize: 30, color: Colors.white),
           ),
           const SizedBox(height: 16),
           SizedBox(
