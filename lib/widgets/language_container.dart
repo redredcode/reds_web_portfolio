@@ -22,7 +22,7 @@ class LanguageContainer extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Flutter logo
+          // logo
           Image.asset(
             imagePath,
             width: 60,

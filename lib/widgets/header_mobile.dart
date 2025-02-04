@@ -75,7 +75,7 @@ class HeaderMobile extends StatelessWidget {
   Container buildGradientEffect() {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.white.withOpacity(0.2)),
+        border: Border.all(color: Colors.red.withOpacity(0.2)),
         borderRadius: BorderRadius.circular(100),
         gradient: LinearGradient(
           begin: Alignment.topLeft,

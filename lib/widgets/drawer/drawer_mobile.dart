@@ -1,12 +1,13 @@
-
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 import '../../constants/nav_items.dart';
 
 class DrawerMobile extends StatelessWidget {
   const DrawerMobile({
-    super.key,
+    super.key, required this.onTapDrawerNavItem,
   });
+
+  final Function(int) onTapDrawerNavItem;
 
   @override
   Widget build(BuildContext context) {
@@ -18,22 +19,27 @@ class DrawerMobile extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Padding(
               padding: const EdgeInsets.only(left: 20, top: 20, bottom: 20),
-              child: IconButton(onPressed: (){
-                Navigator.pop(context);
-              }, icon: const Icon(Icons.close),),
+              child: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: const Icon(Icons.close),
+              ),
             ),
           ),
           for (int i = 0; i < navIcons.length; i++)
             ListTile(
               contentPadding: const EdgeInsets.symmetric(horizontal: 30),
-              titleTextStyle: const TextStyle(
+              titleTextStyle: GoogleFonts.sora(
                 color: Colors.white,
                 fontWeight: FontWeight.w600,
                 fontSize: 16,
               ),
-              onTap: (){},
+              onTap: () {
+                onTapDrawerNavItem(i);
+              },
               leading: Icon(navIcons[i]),
-              title: Text(navTitles[i]),
+              title: Text(navTitles[i], style: GoogleFonts.sora()),
             )
         ],
       ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../utils/projects_utils.dart';
-import '../project_card.dart';
+import '../utils/projects_utils.dart';
+import '../widgets/project_card.dart';
 
 class ProjectsSection extends StatelessWidget {
   const ProjectsSection({super.key});
@@ -18,7 +18,7 @@ class ProjectsSection extends StatelessWidget {
           Text(
             "Projects",
             style: GoogleFonts.sora(
-              fontSize: 70,
+              fontSize: 90,
               fontWeight: FontWeight.bold,
               color: Colors.white,
             ),

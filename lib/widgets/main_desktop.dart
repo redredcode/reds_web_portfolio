@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:reds_web_portfolio/widgets/custom_button.dart';
-
 import '../constants/assets_path.dart';
 import '../constants/colors.dart';
 
@@ -13,7 +12,6 @@ class MainDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-    final screenWidth = screenSize.width;
     final screenHeight = screenSize.height;
     return Container(
       // decoration: BoxDecoration(
@@ -59,6 +57,23 @@ class MainDesktop extends StatelessWidget {
               CustomButton(buttonName: 'Contact Me', onPressed: () {  },),
             ],
           ),
+          // Container(
+          //   decoration: BoxDecoration(
+          //     shape: BoxShape.circle,
+          //     boxShadow: [
+          //       BoxShadow(
+          //         color: Colors.red.withOpacity(0.9),
+          //         spreadRadius: 15,
+          //         blurRadius: 50,
+          //         offset: const Offset(0, 0),
+          //       ),
+          //     ]
+          //   ),
+          //   child: const CircleAvatar(
+          //     radius: 200,
+          //     backgroundImage: AssetImage(AssetsPath.redsDp),
+          //   ),
+          // ),
           const CircleAvatar(
             radius: 200,
             backgroundImage: AssetImage(AssetsPath.redsDp),

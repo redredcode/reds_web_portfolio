@@ -15,7 +15,6 @@ class SkillDesktop extends StatefulWidget {
 class _SkillDesktopState extends State<SkillDesktop> {
   @override
   Widget build(BuildContext context) {
-
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
     final screenHeight = screenSize.height;
@@ -43,15 +42,27 @@ class _SkillDesktopState extends State<SkillDesktop> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          LanguageContainer(title: 'Flutter', imagePath: AssetsPath.flutter),
+                          LanguageContainer(
+                            title: 'Flutter',
+                            imagePath: AssetsPath.flutter,
+                          ),
                           SizedBox(height: 8),
-                          LanguageContainer(title: 'Dart', imagePath: AssetsPath.dart),
+                          LanguageContainer(
+                            title: 'Dart',
+                            imagePath: AssetsPath.dart,
+                          ),
                         ],
                       ),
                     ),
                   ),
-                  SkillCard(title: 'Mobile Development', skills: mobileDevSkills,),
-                  SkillCard(title: 'Tools & DevOps', skills: toolsAndDevOpsSkills,),
+                  SkillCard(
+                    title: 'Mobile Development',
+                    skills: mobileDevSkills,
+                  ),
+                  SkillCard(
+                    title: 'Tools & DevOps',
+                    skills: toolsAndDevOpsSkills,
+                  ),
                 ],
               )
             ],

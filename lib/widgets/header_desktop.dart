@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:reds_web_portfolio/widgets/site_logo.dart';
 
 import '../constants/nav_items.dart';
 
 class HeaderDesktop extends StatelessWidget {
-  const HeaderDesktop({super.key});
+  const HeaderDesktop({super.key, required this.onTapNavMenuItem,});
+
+  final Function(int) onTapNavMenuItem;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +19,7 @@ class HeaderDesktop extends StatelessWidget {
         gradient: LinearGradient(
           colors: [
             Colors.transparent,
-            Colors.redAccent.shade700,
+            Colors.redAccent.shade700.withOpacity(0.45),
           ],
         ),
         borderRadius: BorderRadius.circular(100),
@@ -32,35 +35,36 @@ class HeaderDesktop extends StatelessWidget {
           // the gradient effect
           Container(
             decoration: BoxDecoration(
-                border:
-                Border.all(color: Colors.white.withOpacity(0.2)),
-                borderRadius: BorderRadius.circular(100),
-                gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                      Colors.black.withOpacity(0.4),
-                      Colors.black.withOpacity(0.1),
-                    ],),),
+              border: Border.all(color: Colors.redAccent.withOpacity(0.3)),
+              borderRadius: BorderRadius.circular(100),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Colors.black.withOpacity(0.4),
+                  Colors.black.withOpacity(0.1),
+                ],
+              ),
+            ),
           ),
 
           // child
           Center(
             child: Row(
               children: [
-                const SizedBox(width: 15),
-                SiteLogo(
-                  onTap: (){}
-                ),
+                const SizedBox(width: 70),
+                SiteLogo(onTap: () {}),
                 const Spacer(),
                 for (int i = 0; i < navTitles.length; i++)
                   Padding(
                     padding: const EdgeInsets.only(right: 20),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        onTapNavMenuItem(i);
+                      },
                       child: Text(
                         navTitles[i],
-                        style: const TextStyle(
+                        style: GoogleFonts.sora(
                             fontWeight: FontWeight.w500,
                             fontSize: 16,
                             color: Colors.white),
@@ -74,5 +78,4 @@ class HeaderDesktop extends StatelessWidget {
       ),
     );
   }
-
 }

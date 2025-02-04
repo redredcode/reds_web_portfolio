@@ -19,6 +19,7 @@ class WebsiteColors {
   static const Color warmYellow10 = Color(0x00e6c200);
   // Green Tones
   static const Color vibrantGreen10 = Color(0x0028a745);
+  static Color lightGreen400 = Colors.lightGreen.shade400;
   static const Color softGreen10 = Color(0x002ecc71);
   static const Color darkGreen10 = Color(0x00218838);
 }

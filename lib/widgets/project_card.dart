@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../constants/colors.dart';
+
 import 'dart:js' as js;
 
+import '../constants/colors2.dart';
 import '../utils/projects_utils.dart';
 
 class ProjectCardWidget extends StatelessWidget {
@@ -19,7 +20,7 @@ class ProjectCardWidget extends StatelessWidget {
       width: 260,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.black38,
+        color: CustomColor.bgLight2,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,7 +40,7 @@ class ProjectCardWidget extends StatelessWidget {
               project.title,
               style: const TextStyle(
                 fontWeight: FontWeight.w600,
-                color: Colors.white,
+                color: CustomColor.whitePrimary,
               ),
             ),
           ),
@@ -50,14 +51,14 @@ class ProjectCardWidget extends StatelessWidget {
               project.subtitle,
               style: const TextStyle(
                 fontSize: 12,
-                color: Colors.white,
+                color: CustomColor.whiteSecondary,
               ),
             ),
           ),
           const Spacer(),
           // footer
           Container(
-            color: Colors.black,
+            color: CustomColor.bgLight1,
             padding: const EdgeInsets.symmetric(
               horizontal: 12,
               vertical: 10,
@@ -67,7 +68,7 @@ class ProjectCardWidget extends StatelessWidget {
                 const Text(
                   "Available on:",
                   style: TextStyle(
-                    color: Colors.yellow,
+                    color: CustomColor.yellowSecondary,
                     fontSize: 10,
                   ),
                 ),
@@ -90,7 +91,7 @@ class ProjectCardWidget extends StatelessWidget {
                         js.context.callMethod("open", [project.androidLink]);
                       },
                       child: Image.asset(
-                        "assets/android_icon.png",
+                        "",
                         width: 17,
                       ),
                     ),
@@ -103,7 +104,7 @@ class ProjectCardWidget extends StatelessWidget {
                         js.context.callMethod("open", [project.webLink]);
                       },
                       child: Image.asset(
-                        "assets/web_icon.png",
+                        "",
                         width: 17,
                       ),
                     ),
