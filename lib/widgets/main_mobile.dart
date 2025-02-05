@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reds_web_portfolio/widgets/custom_button.dart';
 
 import '../constants/assets_path.dart';
 import '../constants/colors.dart';
@@ -73,22 +74,13 @@ class MainMobile extends StatelessWidget {
             'App Developer',
             style: TextStyle(fontSize: 30, color: Colors.white),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 32),
           SizedBox(
             width: 250,
             height: 48,
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: WebsiteColors.redsRed30,
-                //Colors.green.shade900,
-                foregroundColor: Colors.white,
-              ),
-              child: const Text(
-                'Contact Me',
-                style: TextStyle(fontSize: 25),
-              ),
-            ),
+            child: CustomButton(
+              height: 65,
+                buttonName: 'Contact Me', onPressed: (){},)
           ),
         ],
       ),

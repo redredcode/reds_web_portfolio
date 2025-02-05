@@ -15,7 +15,6 @@ class ProjectsSectionDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
-    final screenHeight = screenSize.height;
 
     return Container(
       padding: const EdgeInsets.fromLTRB(100, 20, 100, 60),

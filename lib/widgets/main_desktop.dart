@@ -53,7 +53,7 @@ class MainDesktop extends StatelessWidget {
                 'Flutter App Developer',
                 style: TextStyle(fontSize: 30),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 30),
               CustomButton(buttonName: 'Contact Me', onPressed: () {  },),
             ],
           ),

@@ -1,12 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../widgets/custom_button.dart';
 
-class ContactMeSection extends StatelessWidget {
+class ContactMeSection extends StatefulWidget {
   const ContactMeSection({super.key});
 
-  // todo: Add controllers to the text fields
+  @override
+  State<ContactMeSection> createState() => _ContactMeSectionState();
+}
+
+class _ContactMeSectionState extends State<ContactMeSection> {
+  final TextEditingController _nameTEController = TextEditingController();
+  final TextEditingController _emailTEController = TextEditingController();
+  final TextEditingController _messageTEController = TextEditingController();
+
+  void _sendEmail() async {
+    final String name = Uri.encodeComponent(_nameTEController.text);
+    final String email = Uri.encodeComponent(_emailTEController.text);
+    final String message = Uri.encodeComponent(_messageTEController.text);
+
+    const String myEmail = 'thebigredbhyiyan@gmail.com';
+
+    final Uri emailUri = Uri.parse(
+      'mailto:$myEmail?subject=Contact Request from $name&body=Name: $name\nEmail: $email\n\n$message'
+    );
+
+    if (await canLaunchUrl(emailUri)) {
+      await launchUrl(emailUri);
+    } else {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Could not open email app'),
+          ),
+        );
+      }
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +80,7 @@ class ContactMeSection extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   TextFormField(
+                    controller: _nameTEController,
                     decoration: InputDecoration(
                         hintText: 'Enter your full name ...',
                         hintStyle: const TextStyle(fontWeight: FontWeight.w100),
@@ -73,6 +107,7 @@ class ContactMeSection extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   TextFormField(
+                    controller: _emailTEController,
                     decoration: InputDecoration(
                       hintText: 'Enter your email ...',
                       border: OutlineInputBorder(
@@ -98,6 +133,7 @@ class ContactMeSection extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   TextFormField(
+                    controller: _messageTEController,
                     maxLines: 5,
                     decoration: InputDecoration(
                       hintText: 'Enter your message ...',
@@ -109,7 +145,7 @@ class ContactMeSection extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 18),
-                  CustomButton(buttonName: 'Submit', onPressed: () {})
+                  CustomButton(buttonName: 'Submit', onPressed: _sendEmail,)
                 ],
               ),
             ),

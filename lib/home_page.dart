@@ -86,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(height: 40),
 
               // SKILLS Container
-              const SkillsSection(),
+              SkillsSection(key: navBarKeys[1]),
 
               const GlowingDivider(),
               const SizedBox(height: 40),
