@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:reds_web_portfolio/constants/assets_path.dart';
 
 class FooterSection extends StatelessWidget {
   const FooterSection({super.key});

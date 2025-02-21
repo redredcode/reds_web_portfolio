@@ -50,7 +50,7 @@ class ProjectsSectionDesktop extends StatelessWidget {
             projectName: 'E Commerce App',
             projectDescription:
             'An e commerce app for buying Lorem ipsum dolar en summit ldjkfajd  ajsdfljasdl ladjf ladf lj asldfjk ladkjf ljaldfj dfljadk',
-            imagePath: AssetsPath.taskManagerAppDemoPng,
+            imagePath: AssetsPath.eCommAppDemoPng,
             onTapLiveDemo: () {},
             onTapGithub: ()
             {
