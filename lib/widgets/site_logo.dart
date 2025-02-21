@@ -10,7 +10,9 @@ class SiteLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){SiteLauncher.launchUrl('https://redredcode.vercel.app/');},
+      onTap: () {
+        SiteLauncher.launchUrl('https://redredcode.vercel.app/');
+      },
       child: Text(
         'redredcode',
         //'Redwan\nAhmed\nFahim',
