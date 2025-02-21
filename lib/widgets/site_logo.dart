@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../utils/site_launcher.dart';
+import 'dart:html' as html;
 
 class SiteLogo extends StatelessWidget {
   const SiteLogo({super.key,});
@@ -11,7 +10,7 @@ class SiteLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        SiteLauncher.launchUrl('https://redredcode.vercel.app/');
+        html.window.location.reload();
       },
       child: Text(
         'redredcode',
