@@ -38,7 +38,7 @@ class HeaderMobile extends StatelessWidget {
             child: Row(
               children: [
                 const SizedBox(width: 40),
-                SiteLogo(onTap: onLogoTap),
+                const SiteLogo(),
                 const Spacer(),
                 IconButton(
                   onPressed: onMenuTap,

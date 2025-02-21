@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
-class SiteLogo extends StatelessWidget {
-  const SiteLogo({super.key, this.onTap});
+import '../utils/site_launcher.dart';
 
-  final VoidCallback? onTap;
+class SiteLogo extends StatelessWidget {
+  const SiteLogo({super.key,});
+
+  
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      onTap: (){SiteLauncher.launchUrl('https://redredcode.vercel.app/');},
       child: Text(
         'redredcode',
         //'Redwan\nAhmed\nFahim',

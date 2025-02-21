@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
-
+import 'package:reds_web_portfolio/utils/site_launcher.dart';
 import '../constants/assets_path.dart';
 import '../constants/project_descriptions.dart';
 import '../utils/urls.dart';
@@ -39,10 +37,10 @@ class ProjectsSectionDesktop extends StatelessWidget {
             ProjectDescriptions.taskManagerAppDescription,
             imagePath: AssetsPath.taskManagerAppDemoPng,
             onTapLiveDemo: () {
-              launchUrl(Urls.tmAppLiveDemo);
+              SiteLauncher.launchUrl(Urls.tmAppLiveDemo);
             },
             onTapGithub: () {
-              launchUrl(Urls.tmAppGithubLink);
+              SiteLauncher.launchUrl(Urls.tmAppGithubLink);
             },
           ),
 
@@ -55,7 +53,7 @@ class ProjectsSectionDesktop extends StatelessWidget {
             onTapLiveDemo: () {},
             onTapGithub: ()
             {
-              launchUrl(Urls.eCommerceAppGithubLink);
+              SiteLauncher.launchUrl(Urls.eCommerceAppGithubLink);
             },
           ),
           const SizedBox(height: 90),
@@ -65,21 +63,10 @@ class ProjectsSectionDesktop extends StatelessWidget {
               imagePath: AssetsPath.webPortfolioDemoPng,
               onTapLiveDemo: () {},
               onTapGithub: () {
-                launchUrl(
-                  Urls.webPortfolioGithubLink,
-                );
+                SiteLauncher.launchUrl(Urls.webPortfolioGithubLink);
               }),
         ],
       ),
     );
-  }
-
-  void launchUrl(String url) async {
-    Uri uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrlString(url);
-    } else {
-      throw 'Could not launch URL';
-    }
   }
 }
