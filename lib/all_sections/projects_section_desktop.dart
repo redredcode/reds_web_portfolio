@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../constants/assets_path.dart';
+import '../constants/project_descriptions.dart';
 import '../utils/urls.dart';
 import '../widgets/project_tile_row.dart';
 import '../widgets/right_project_tile_row.dart';
@@ -35,7 +36,7 @@ class ProjectsSectionDesktop extends StatelessWidget {
           ProjectTileRow(
             projectName: 'Task Manager App',
             projectDescription:
-            'Lorem ipsum dolar en summit ldjkfajd  ajsdfljasdl ladjf ladf lj asldfjk ladkjf ljaldfj dfljadk',
+            ProjectDescriptions.taskManagerAppDescription,
             imagePath: AssetsPath.taskManagerAppDemoPng,
             onTapLiveDemo: () {
               launchUrl(Urls.tmAppLiveDemo);
@@ -49,14 +50,25 @@ class ProjectsSectionDesktop extends StatelessWidget {
           RightProjectTileRow(
             projectName: 'E Commerce App',
             projectDescription:
-            'An e commerce app for buying Lorem ipsum dolar en summit ldjkfajd  ajsdfljasdl ladjf ladf lj asldfjk ladkjf ljaldfj dfljadk',
+            ProjectDescriptions.ecommerceAppDescription,
             imagePath: AssetsPath.eCommAppDemoPng,
             onTapLiveDemo: () {},
             onTapGithub: ()
             {
               launchUrl(Urls.eCommerceAppGithubLink);
             },
-          )
+          ),
+          const SizedBox(height: 90),
+          ProjectTileRow(
+              projectName: 'Portfolio with Flutter Web',
+              projectDescription: ProjectDescriptions.portfolioAppDescription,
+              imagePath: AssetsPath.webPortfolioDemoPng,
+              onTapLiveDemo: () {},
+              onTapGithub: () {
+                launchUrl(
+                  Urls.webPortfolioGithubLink,
+                );
+              }),
         ],
       ),
     );

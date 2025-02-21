@@ -70,7 +70,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
               if (constraints.maxWidth >= kMinDesktopWidth &&
                   constraints.maxWidth >= kMedDesktopWidth)
-                const MainDesktop()
+                 MainDesktop(onTapContactMe: (int navIndex) {
+                   scrollToSection(3);
+                 },)
               else
                 const MainMobile(),
 

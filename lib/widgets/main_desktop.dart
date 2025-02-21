@@ -6,9 +6,10 @@ import '../constants/colors.dart';
 
 class MainDesktop extends StatelessWidget {
   const MainDesktop({
-    super.key,
+    super.key, required this.onTapContactMe,
   });
 
+  final Function(int) onTapContactMe;
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -54,7 +55,10 @@ class MainDesktop extends StatelessWidget {
                 style: TextStyle(fontSize: 30),
               ),
               const SizedBox(height: 30),
-              CustomButton(buttonName: 'Contact Me', onPressed: () {  },),
+              CustomButton(
+                buttonName: 'Contact Me',
+                onPressed: (){onTapContactMe(3);},
+              ),
             ],
           ),
           // Container(
