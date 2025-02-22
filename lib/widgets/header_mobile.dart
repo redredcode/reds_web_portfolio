@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:reds_web_portfolio/widgets/site_logo.dart';
 
-class HeaderMobile extends StatelessWidget {
+class HeaderMobile extends StatelessWidget implements PreferredSizeWidget {
   const HeaderMobile({super.key, this.onLogoTap, this.onMenuTap});
 
   final VoidCallback? onLogoTap;
@@ -17,7 +17,7 @@ class HeaderMobile extends StatelessWidget {
         gradient: LinearGradient(
           colors: [
             Colors.transparent,
-            Colors.redAccent.shade700,
+            Colors.redAccent.shade700.withOpacity(0.45),
           ],
         ),
         borderRadius: BorderRadius.circular(100),
@@ -75,7 +75,7 @@ class HeaderMobile extends StatelessWidget {
   Container buildGradientEffect() {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.red.withOpacity(0.2)),
+        border: Border.all(color:  Colors.redAccent.withOpacity(0.3)),
         borderRadius: BorderRadius.circular(100),
         gradient: LinearGradient(
           begin: Alignment.topLeft,
@@ -88,4 +88,7 @@ class HeaderMobile extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(60);
 }

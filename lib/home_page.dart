@@ -43,6 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   scrollToSection(navIndex);
                 },
               ),
+
         body: SingleChildScrollView(
           controller: scrollController,
           child: Column(
