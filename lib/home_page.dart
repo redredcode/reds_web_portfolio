@@ -25,103 +25,137 @@ class _MyHomePageState extends State<MyHomePage> {
   final scrollController = ScrollController();
   final List<GlobalKey> navBarKeys = List.generate(4, (index) => GlobalKey());
 
+  double lastScrollOffset = 0;
+  bool isHeaderVisible = true;
+
+  @override
+  void initState() {
+    super.initState();
+    scrollController.addListener(_handleScroll);
+  }
+
+  void _handleScroll() {
+    if (scrollController.offset > lastScrollOffset && isHeaderVisible) {
+      setState(() => isHeaderVisible = false);
+    } else if (scrollController.offset < lastScrollOffset && !isHeaderVisible) {
+      setState(() => isHeaderVisible = true);
+    }
+    lastScrollOffset = scrollController.offset;
+  }
+
+  @override
+  void dispose() {
+    scrollController.removeListener(_handleScroll);
+    scrollController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
 
-    return LayoutBuilder(
-        builder: (context, constraints) {
+    return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
         backgroundColor: WebsiteColors.darkBlack60,
         key: scaffoldKey,
         endDrawer: constraints.maxWidth >= kMinDesktopWidth
             ? null
             : DrawerMobile(
-                onTapDrawerNavItem: (int navIndex) {
-                  scaffoldKey.currentState?.closeEndDrawer();
-                  scrollToSection(navIndex);
-                },
-              ),
+          onTapDrawerNavItem: (int navIndex) {
+            scaffoldKey.currentState?.closeEndDrawer();
+            scrollToSection(navIndex);
+          },
+        ),
 
-        body: SingleChildScrollView(
-          controller: scrollController,
-          child: Column(
-            children: [
-              SizedBox(key: navBarKeys.first),
-              // MAIN
-              if (constraints.maxWidth >= kMinDesktopWidth)
-                Column(
-                  children: [
-                    const SizedBox(height: 10),
-                    HeaderDesktop(
-                      onTapNavMenuItem: (int navIndex) {
-                        scrollToSection(navIndex);
+        body: Stack(
+          children: [
+            SingleChildScrollView(
+              controller: scrollController,
+              child: Column(
+                children: [
+                  SizedBox(key: navBarKeys.first),
+                  // MAIN
+                  const SizedBox(height: 70),
+
+                  if (constraints.maxWidth >= kMinDesktopWidth &&
+                      constraints.maxWidth >= kMedDesktopWidth)
+                    MainDesktop(
+                      onTapContactMe: (int navIndex) {
+                        scrollToSection(3);
                       },
-                    ),
-                  ],
-                )
-              else
-                HeaderMobile(
-                  onLogoTap: () {},
-                  onMenuTap: () {
-                    scaffoldKey.currentState?.openEndDrawer();
-                  },
-                ),
+                    )
+                  else
+                    const MainMobile(),
 
-              if (constraints.maxWidth >= kMinDesktopWidth &&
-                  constraints.maxWidth >= kMedDesktopWidth)
-                 MainDesktop(onTapContactMe: (int navIndex) {
-                   scrollToSection(3);
-                 },)
-              else
-                const MainMobile(),
+                  const SizedBox(height: 42),
 
-              const SizedBox(height: 42),
+                  const GlowingDivider(width: double.infinity),
+                  const SizedBox(height: 40),
 
-              const GlowingDivider(width: double.infinity),
-              const SizedBox(height: 40),
+                  // ABOUT ME
+                  const AboutSectionDesktop(),
 
-              // ABOUT ME
-              const AboutSectionDesktop(),
+                  const GlowingDivider(),
+                  const SizedBox(height: 40),
 
-              const GlowingDivider(),
-              const SizedBox(height: 40),
+                  // SKILLS Container
+                  SkillsSection(key: navBarKeys[1]),
 
-              // SKILLS Container
-              SkillsSection(key: navBarKeys[1]),
+                  const GlowingDivider(),
+                  const SizedBox(height: 40),
 
-              const GlowingDivider(),
-              const SizedBox(height: 40),
+                  // PROJECTS
+                  ProjectsSectionDesktop(key: navBarKeys[2]),
 
-              // PROJECTS
-              ProjectsSectionDesktop(key: navBarKeys[2]),
+                  const GlowingDivider(),
+                  const SizedBox(height: 40),
 
-              // EXPERIENCE
-              // todo: add experience when you're pro experienced In Shaa Allah :)
-              const GlowingDivider(),
-              const SizedBox(height: 40),
+                  // Contact me
+                  ContactMeSection(key: navBarKeys[3]),
 
-              // Contact me
-              ContactMeSection(key: navBarKeys[3]),
+                  const GlowingDivider(),
+                  const SizedBox(height: 40),
 
-              const GlowingDivider(),
-              const SizedBox(height: 40),
+                  // FOOTER
+                  const FooterSection(),
+                  const GlowingDivider(height: 20),
+                ],
+              ),
+            ),
 
-              // FOOTER
-              const FooterSection(),
-              const GlowingDivider(height: 20),
-            ],
-          ),
+            // Header with Hide/Show animation
+          AnimatedPositioned(
+              duration: const Duration(milliseconds: 300),
+              top: isHeaderVisible ? 12 : -80,
+              left: 0,
+              right: 0,
+            child: constraints.maxWidth >= kMinDesktopWidth
+                ? HeaderDesktop(
+              onTapNavMenuItem: (int navIndex) {
+                scrollToSection(navIndex);
+              },
+            )
+                : HeaderMobile(
+              onLogoTap: () {},
+              onMenuTap: () {
+                scaffoldKey.currentState?.openEndDrawer();
+              },
+            ),
+
+
+            ),
+          ],
         ),
       );
     });
   }
+
   void scrollToSection(int navIndex) {
     final key = navBarKeys[navIndex];
     Scrollable.ensureVisible(
       key.currentContext!,
-      duration: const Duration(microseconds: 500),
+      duration: const Duration(milliseconds: 500),
       curve: Curves.easeInOut,
     );
   }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:reds_web_portfolio/widgets/site_logo.dart';
-
 import '../constants/nav_items.dart';
 
 class HeaderDesktop extends StatelessWidget {
@@ -26,7 +25,7 @@ class HeaderDesktop extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          // the blur effect
+          // //the blur effect
           // BackdropFilter(
           //   filter: ImageFilter.blur(sigmaY: 5, sigmaX: 5),
           //   child: Container(),

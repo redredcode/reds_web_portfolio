@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 
+import 'package:google_fonts/google_fonts.dart';
+
 class SiteLogo extends StatelessWidget {
   const SiteLogo({super.key,});
 
@@ -15,7 +17,7 @@ class SiteLogo extends StatelessWidget {
       child: Text(
         'redredcode',
         //'Redwan\nAhmed\nFahim',
-        style: TextStyle(
+        style: GoogleFonts.sora(
             fontSize: 22,
             fontWeight: FontWeight.bold,
             color: Colors.redAccent.shade700),

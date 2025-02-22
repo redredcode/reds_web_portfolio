@@ -15,36 +15,13 @@ class MainDesktop extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
     final screenHeight = screenSize.height;
     return Container(
-      // decoration: BoxDecoration(
-      //   gradient: LinearGradient(
-      //     colors: [
-      //       Colors.transparent,
-      //       Colors.redAccent.shade700,
-      //     ],
-      //     begin: Alignment.bottomCenter,
-      //     end: Alignment.centerRight
-      //   ),
-      //   borderRadius: BorderRadius.circular(100),
-      // ),
       constraints: const BoxConstraints(minHeight: 350),
       height: screenHeight / 1.2,
       margin: const EdgeInsets.symmetric(horizontal: 24),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          // Positioned(
-          //   left: 0,
-          //   bottom: 0,
-          //   child: Column(
-          //     children: [
-          //       Container(
-          //         height: 200,
-          //         width: 4,
-          //         color: WebsiteColors.redsRed30,
-          //       )
-          //     ],
-          //   ),
-          // ),
+          // name, title and the button
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -61,23 +38,7 @@ class MainDesktop extends StatelessWidget {
               ),
             ],
           ),
-          // Container(
-          //   decoration: BoxDecoration(
-          //     shape: BoxShape.circle,
-          //     boxShadow: [
-          //       BoxShadow(
-          //         color: Colors.red.withOpacity(0.9),
-          //         spreadRadius: 15,
-          //         blurRadius: 50,
-          //         offset: const Offset(0, 0),
-          //       ),
-          //     ]
-          //   ),
-          //   child: const CircleAvatar(
-          //     radius: 200,
-          //     backgroundImage: AssetImage(AssetsPath.redsDp),
-          //   ),
-          // ),
+
           const CircleAvatar(
             radius: 200,
             backgroundImage: AssetImage(AssetsPath.redsDp),
