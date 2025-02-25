@@ -8,7 +8,7 @@ class FooterSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500,
+      height: 200,
       width: double.maxFinite,
       color: Colors.black,
       child: Column(
@@ -20,7 +20,21 @@ class FooterSection extends StatelessWidget {
                 '"Thanks for Scrolling!"',
                 style: GoogleFonts.sora(
                   fontWeight: FontWeight.bold,
-                  fontSize: 30,
+                  fontSize: 20,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                '© All Rights Reserved. \nDesigned and Developed by Redwan Ahmed',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.sora(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12,
                 ),
               ),
             ],

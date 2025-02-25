@@ -71,8 +71,12 @@ class MainMobile extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           const Text(
-            'App Developer',
-            style: TextStyle(fontSize: 30, color: Colors.white),
+            'Flutter App Developer',
+            textAlign: TextAlign.start,
+            style: TextStyle(
+              fontSize: 27,
+              color: Colors.white,
+            ),
           ),
           const SizedBox(height: 32),
           SizedBox(

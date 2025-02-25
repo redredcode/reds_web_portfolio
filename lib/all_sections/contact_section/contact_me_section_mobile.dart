@@ -45,24 +45,28 @@ class _ContactMeSectionMobileState extends State<ContactMeSectionMobile> {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      height: 900,
+      height: 780,
       width: double.maxFinite,
       color: Colors.black,
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            Text(
-              // zenDots,
-              'Contact me',
-              textAlign: TextAlign.center,
-              style: GoogleFonts.sora(
-                fontWeight: FontWeight.bold,
-                fontSize: 70,
-                color: Colors.white,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                // zenDots,
+                'Contact',
+                //textAlign: TextAlign.center,
+                style: GoogleFonts.sora(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 60,
+                  color: Colors.white,
+                  //height: 0.9
+                ),
               ),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 10),
             buildContactForm(),
             const SizedBox(height: 30),
             buildSocialLinks(),

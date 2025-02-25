@@ -15,11 +15,13 @@ class ProjectsSectionMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
+    final screenHeight = screenSize.height;
 
     return Container(
-      padding: const EdgeInsets.fromLTRB(100, 20, 100, 60),
+      padding: const EdgeInsets.symmetric(horizontal: 24),
       //width: double.maxFinite,
       width: screenWidth,
+      height: screenHeight/0.47,
       //color: Colors.black,
       child: Column(
         //mainAxisAlignment: MainAxisAlignment.center,
