@@ -7,13 +7,14 @@ class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
     required this.buttonName,
-    required this.onPressed, this.width, this.height,
+    required this.onPressed, this.width, this.height, this.fontSize,
   });
 
   final String buttonName;
   final VoidCallback onPressed;
   final double? width;
   final double? height;
+  final double? fontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ class CustomButton extends StatelessWidget {
         child: Text(
           buttonName,
           style: GoogleFonts.sora(
-            fontSize: 30,
+            fontSize: fontSize ?? 30,
             fontWeight: FontWeight.w600,
           ),
         ),

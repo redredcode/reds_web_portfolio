@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'dart:html' as html;
-
 import 'package:google_fonts/google_fonts.dart';
+import 'package:universal_html/html.dart' as html;
 
-class SiteLogo extends StatelessWidget {
-  const SiteLogo({super.key,});
-
-  
+class SiteLogoDesktop extends StatelessWidget {
+  const SiteLogoDesktop({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +15,12 @@ class SiteLogo extends StatelessWidget {
       },
       child: Text(
         'redredcode',
-        //'Redwan\nAhmed\nFahim',
         style: GoogleFonts.sora(
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-            color: Colors.redAccent.shade700),
+          fontSize: 22,
+          fontWeight: FontWeight.bold,
+          color: Colors.redAccent.shade700,
+        ),
       ),
     );
   }
-
 }

@@ -11,8 +11,12 @@ class AboutSectionMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+    final screenWidth = screenSize.width;
+    final screenHeight = screenSize.height;
+
     return Container(
-      height: 700,
+      height: screenHeight / 0.9,
       width: double.maxFinite,
       color: Colors.black,
       child: Padding(
@@ -21,10 +25,11 @@ class AboutSectionMobile extends StatelessWidget {
           //crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'About Me',
+              'About',
+              //textAlign: TextAlign.center,
               style: GoogleFonts.sora(
                 fontWeight: FontWeight.bold,
-                fontSize: 70,
+                fontSize: 60,
                 color: Colors.white,
               ),
             ),
@@ -33,6 +38,7 @@ class AboutSectionMobile extends StatelessWidget {
               children: [
                 const Text(
                   'I\'m a Flutter developer based in Bangladesh. 🇧🇩',
+                  //textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 30,
@@ -77,7 +83,7 @@ class AboutSectionMobile extends StatelessWidget {
             const SizedBox(height: 48),
             Center(
               child: CustomButton(
-                buttonName: 'Download CV',
+                buttonName: 'Download CV', fontSize: 22,
                 onPressed: () {
                   SiteLauncher.launchUrl(Urls.atsResumeDriveLink); // old cv... update to the new one
                 },

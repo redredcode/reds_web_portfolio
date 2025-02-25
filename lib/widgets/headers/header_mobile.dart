@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reds_web_portfolio/widgets/site_logo.dart';
+import 'package:reds_web_portfolio/widgets/site_logo/site_logo.dart';
 
 class HeaderMobile extends StatelessWidget implements PreferredSizeWidget {
   const HeaderMobile({super.key, this.onLogoTap, this.onMenuTap});
@@ -38,7 +38,7 @@ class HeaderMobile extends StatelessWidget implements PreferredSizeWidget {
             child: Row(
               children: [
                 const SizedBox(width: 40),
-                const SiteLogo(),
+                const SiteLogoDesktop(),
                 const Spacer(),
                 IconButton(
                   onPressed: onMenuTap,

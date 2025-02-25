@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:reds_web_portfolio/widgets/site_logo.dart';
+import 'package:reds_web_portfolio/widgets/site_logo/site_logo.dart';
 import '../../constants/nav_items.dart';
 
 class HeaderDesktop extends StatelessWidget {
@@ -52,7 +52,7 @@ class HeaderDesktop extends StatelessWidget {
             child: Row(
               children: [
                 const SizedBox(width: 70),
-                const SiteLogo(),
+                const SiteLogoDesktop(),
                 const Spacer(),
                 for (int i = 0; i < navTitles.length; i++)
                   Padding(

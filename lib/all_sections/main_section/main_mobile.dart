@@ -33,7 +33,7 @@ class MainMobile extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const CircleAvatar(
-            radius: 180,
+            radius: 140,
             backgroundImage: AssetImage(AssetsPath.redsDp),
           ),
           const SizedBox(height: 8),
