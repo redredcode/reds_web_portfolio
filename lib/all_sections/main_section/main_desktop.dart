@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:reds_web_portfolio/widgets/custom_button.dart';
-import '../constants/assets_path.dart';
-import '../constants/colors.dart';
+import 'package:reds_web_portfolio/widgets/buttons/custom_button.dart';
+import '../../constants/assets_path.dart';
+import '../../constants/colors.dart';
 
 class MainDesktop extends StatelessWidget {
   const MainDesktop({

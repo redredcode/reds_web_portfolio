@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:reds_web_portfolio/utils/site_launcher.dart';
-import '../constants/assets_path.dart';
-import '../constants/project_descriptions.dart';
-import '../utils/urls.dart';
-import '../widgets/project_tile_row.dart';
-import '../widgets/right_project_tile_row.dart';
+import '../../constants/assets_path.dart';
+import '../../constants/project_descriptions.dart';
+import '../../utils/urls.dart';
+import '../../widgets/project_tiles/mobile_project_tile_row.dart';
+import '../../widgets/project_tiles/project_tile_row.dart';
+import '../../widgets/project_tiles/right_project_tile_row.dart';
 
-class ProjectsSectionDesktop extends StatelessWidget {
-  const ProjectsSectionDesktop({super.key});
+class ProjectsSectionMobile extends StatelessWidget {
+  const ProjectsSectionMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,17 +22,19 @@ class ProjectsSectionDesktop extends StatelessWidget {
       width: screenWidth,
       //color: Colors.black,
       child: Column(
+        //mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             'Featured Projects',
             style: GoogleFonts.sora(
               fontWeight: FontWeight.bold,
-              fontSize: 90,
+              fontSize: 60,
               color: Colors.white,
             ),
+            textAlign: TextAlign.center,
           ),
           const SizedBox(height: 20),
-          ProjectTileRow(
+          MobileProjectTileRow(
             projectName: 'Task Manager App',
             projectDescription:
             ProjectDescriptions.taskManagerAppDescription,
@@ -44,8 +47,8 @@ class ProjectsSectionDesktop extends StatelessWidget {
             },
           ),
 
-          const SizedBox(height: 90),
-          RightProjectTileRow(
+          const SizedBox(height: 50),
+          MobileProjectTileRow(
             projectName: 'E Commerce App',
             projectDescription:
             ProjectDescriptions.ecommerceAppDescription,
@@ -56,8 +59,8 @@ class ProjectsSectionDesktop extends StatelessWidget {
               SiteLauncher.launchUrl(Urls.eCommerceAppGithubLink);
             },
           ),
-          const SizedBox(height: 90),
-          ProjectTileRow(
+          const SizedBox(height: 50),
+          MobileProjectTileRow(
               projectName: 'Portfolio with Flutter Web',
               projectDescription: ProjectDescriptions.portfolioAppDescription,
               imagePath: AssetsPath.webPortfolioDemoPng,

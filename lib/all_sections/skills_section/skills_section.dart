@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../constants/responsive_size.dart';
-import '../widgets/skill_desktop.dart';
-import '../widgets/skill_mobile.dart';
+import '../../constants/responsive_size.dart';
+import 'skill_desktop.dart';
+import 'skill_mobile.dart';
 
 class SkillsSection extends StatelessWidget {
   const SkillsSection({super.key});
@@ -27,7 +27,7 @@ class SkillsSection extends StatelessWidget {
                 'Skills',
                 style: GoogleFonts.sora(
                   fontWeight: FontWeight.bold,
-                  fontSize: 90,
+                  fontSize: 70,
                   color: Colors.white,
                 ),
               ),

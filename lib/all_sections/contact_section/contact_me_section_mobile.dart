@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../constants/assets_path.dart';
-import '../widgets/custom_button.dart';
+import '../../constants/assets_path.dart';
+import '../../widgets/buttons/custom_button.dart';
 
-class ContactMeSection extends StatefulWidget {
-  const ContactMeSection({super.key});
+class ContactMeSectionMobile extends StatefulWidget {
+  const ContactMeSectionMobile({super.key});
 
   @override
-  State<ContactMeSection> createState() => _ContactMeSectionState();
+  State<ContactMeSectionMobile> createState() => _ContactMeSectionMobileState();
 }
 
-class _ContactMeSectionState extends State<ContactMeSection> {
+class _ContactMeSectionMobileState extends State<ContactMeSectionMobile> {
   final TextEditingController _nameTEController = TextEditingController();
   final TextEditingController _emailTEController = TextEditingController();
   final TextEditingController _messageTEController = TextEditingController();
@@ -55,9 +55,10 @@ class _ContactMeSectionState extends State<ContactMeSection> {
             Text(
               // zenDots,
               'Contact me',
+              textAlign: TextAlign.center,
               style: GoogleFonts.sora(
                 fontWeight: FontWeight.bold,
-                fontSize: 90,
+                fontSize: 70,
                 color: Colors.white,
               ),
             ),

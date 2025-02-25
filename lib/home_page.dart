@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:reds_web_portfolio/all_sections/contact_me_section.dart';
+import 'package:reds_web_portfolio/all_sections/about_section/about_section_mobile.dart';
+import 'package:reds_web_portfolio/all_sections/contact_section/contact_me_section_desktop.dart';
 import 'package:reds_web_portfolio/all_sections/footer_section.dart';
-import 'package:reds_web_portfolio/all_sections/projects_section_desktop.dart';
-import 'package:reds_web_portfolio/all_sections/skills_section.dart';
+import 'package:reds_web_portfolio/all_sections/project_section/projects_section_desktop.dart';
+import 'package:reds_web_portfolio/all_sections/project_section/projects_section_mobile.dart';
+import 'package:reds_web_portfolio/all_sections/skills_section/skills_section.dart';
 import 'package:reds_web_portfolio/constants/colors.dart';
-import 'package:reds_web_portfolio/all_sections/about_section_desktop.dart';
+import 'package:reds_web_portfolio/all_sections/about_section/about_section_desktop.dart';
 import 'package:reds_web_portfolio/widgets/drawer/drawer_mobile.dart';
 import 'package:reds_web_portfolio/widgets/glowing_divider.dart';
-import 'package:reds_web_portfolio/widgets/header_desktop.dart';
-import 'package:reds_web_portfolio/widgets/header_mobile.dart';
-import 'package:reds_web_portfolio/widgets/main_desktop.dart';
-import 'package:reds_web_portfolio/widgets/main_mobile.dart';
+import 'package:reds_web_portfolio/widgets/headers/header_desktop.dart';
+import 'package:reds_web_portfolio/widgets/headers/header_mobile.dart';
+import 'package:reds_web_portfolio/all_sections/main_section/main_desktop.dart';
+import 'all_sections/contact_section/contact_me_section_mobile.dart';
+import 'all_sections/main_section/main_mobile.dart';
 import 'constants/responsive_size.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -94,7 +97,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   const SizedBox(height: 40),
 
                   // ABOUT ME
-                  const AboutSectionDesktop(),
+                  if (constraints.maxWidth >= kMinDesktopWidth)
+                  const AboutSectionDesktop()
+                  else const AboutSectionMobile(),
 
                   const GlowingDivider(),
                   const SizedBox(height: 40),
@@ -106,13 +111,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   const SizedBox(height: 40),
 
                   // PROJECTS
-                  ProjectsSectionDesktop(key: navBarKeys[2]),
+                  if (constraints.maxWidth >= kMinDesktopWidth)
+                  ProjectsSectionDesktop(key: navBarKeys[2])
+                  else const ProjectsSectionMobile(),
 
                   const GlowingDivider(),
                   const SizedBox(height: 40),
 
                   // Contact me
-                  ContactMeSection(key: navBarKeys[3]),
+                  if (constraints.maxWidth >= kMinDesktopWidth)
+                  ContactMeSectionDesktop(key: navBarKeys[3])
+                  else const ContactMeSectionMobile(),
 
                   const GlowingDivider(),
                   const SizedBox(height: 40),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:reds_web_portfolio/widgets/custom_button.dart';
+import 'package:reds_web_portfolio/widgets/buttons/custom_button.dart';
 
-import '../constants/assets_path.dart';
-import '../constants/colors.dart';
+import '../../constants/assets_path.dart';
+import '../../constants/colors.dart';
 import 'main_desktop.dart';
 
 class MainMobile extends StatelessWidget {

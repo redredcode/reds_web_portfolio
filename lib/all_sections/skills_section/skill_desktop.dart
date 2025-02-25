@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:reds_web_portfolio/widgets/language_container.dart';
-import 'package:reds_web_portfolio/widgets/skill_card.dart';
+import 'package:reds_web_portfolio/all_sections/skills_section/skill_card.dart';
 
-import '../constants/assets_path.dart';
-import '../constants/skill_items.dart';
+import '../../constants/assets_path.dart';
+import '../../constants/skill_items.dart';
 
 class SkillDesktop extends StatefulWidget {
   const SkillDesktop({super.key});
